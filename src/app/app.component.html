@@ -1,61 +1,6 @@
-<!-- Any template-driven-form use Ngform attribute(directive)
-The corresponding model is automatically created by angular
-UserData becomes the object that acts as a model. UserData is automatically
-created by angular. It will have fields like firstName, lastName, salary and joinDate.
-Ngform is builtin class.
-<form #userData="ngForm" translates to  var userData = new NgForm(); by angular.
--->
- 
-<!-- Add user form -->
-<b>Enter user's data</b><br>
-<form #userData="ngForm" (ngSubmit)="addUser(userData)">
-  UserId <input type="text" name="uid" ngModel /><br>
-  Password <input type="text" name="password" ngModel /><br>
-  EmailId <input type="date" name="emailid" ngModel /><br>
-  Salary <input type="number" name="salary" ngModel /><br>
 
-  <input type="submit" value="Add user" />
-  <input type="button" value="Get user" (Click)="getAllUsers()"/>
-</form>
- 
-<!-- User Data -->
-<h2>User Data</h2>
- 
-<table border="1">
-  <tr>
-    <th>UserId</th>
-    <th>Password</th>
-    <th>EmailId</th>
-   
-    <th>Actions</th>
-  </tr>
-  <tr *ngFor="let user of userList">
-    <td>{{ user.uid }}</td>
-    <td>{{ user.password }}</td>
-    <td>{{ user.emailid }}</td>
-   
-    <td>
-      <button (click)="editUser(user)">Edit</button>
-      <button (click)="deleteUser(user)">Delete</button>
-    </td>
-  </tr>
-</table>
- 
-<!-- Edit user form (hidden by default) -->
-<div *ngIf="editingUser">
-  <h2>Edit User</h2>
-  <form #editForm="ngForm" (ngSubmit)="updateUser(editForm)">
-    UserId<input type="text" name="uid" ngModel [(ngModel)]="editingUser.firstName" /><br>
-    password <input type="text" name="password" ngModel [(ngModel)]="editingUser.lastName" /><br>
-    EmailId<input type="email" name="emailid" ngModel [(ngModel)]="editingUser.joinDate" /><br>
-    Salary <input type="number" name="salary" ngModel [(ngModel)]="editingUser.salary" /><br>
-    <input type="submit" value="Update user" />
-    <button (click)="cancelEdit()">Cancel</button>
-  </form>
-</div>
- 
- 
- 
-<router-outlet></router-outlet>
- 
- 
+<nav>
+  <a routerLink="/home"><img src="/assets/images/home.png"/>Home</a>&nbsp;&nbsp;
+  <a routerLink="/aboutus">AboutUs</a>&nbsp;&nbsp;
+  <a routerLink="/contactus">ContactUs</a>&nbsp;&nbsp;
+</nav><router-outlet></router-outlet>

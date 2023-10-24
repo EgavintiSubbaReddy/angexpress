@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import { BackendAccessService } from './backend-access.service';
- 
- 
+import { HttpClient } from '@angular/common/http';
+import { BackendAccessService } from '.././backend-access.service';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-contactus',
+  templateUrl: './contactus.component.html',
+  styleUrls: ['./contactus.component.css']
 })
-export class AppComponent {
+export class ContactusComponent {
   title = 'angexpress';
   userList : any = [];
   editingUser: any = null;
@@ -51,5 +50,5 @@ export class AppComponent {
   }
  
  
- 
+
 }
